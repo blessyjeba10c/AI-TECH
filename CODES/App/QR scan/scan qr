@@ -1,0 +1,22 @@
+// In your activity or fragment
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    // Initialize the QR code scanner
+    qrScanner = new QRCodeScanner(this);
+
+    // Trigger QR code scanning
+    qrScanner.scanQRCode(new QRCodeScanner.QRCodeScanListener() {
+        @Override
+        public void onQRCodeScanned(String qrCodeData) {
+            // Handle scanned QR code data
+            processQRCode(qrCodeData);
+        }
+    });
+}
+
+private void processQRCode(String qrCodeData) {
+    // Logic to handle the scanned QR code data
+}

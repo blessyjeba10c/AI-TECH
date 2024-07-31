@@ -1,0 +1,22 @@
+// ManualsActivity.java
+public class ManualsActivity extends AppCompatActivity {
+    private RecyclerView recyclerView;
+    private ManualAdapter adapter;
+    private ManualRepository manualRepository;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_manuals);
+
+        recyclerView = findViewById(R.id.recyclerView);
+        adapter = new ManualAdapter();
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+
+        manualRepository = new ManualRepository();
+        manualRepository.getManuals().observe(this, manuals -> {
+            adapter.setManuals(manuals);
+        });
+    }
+}

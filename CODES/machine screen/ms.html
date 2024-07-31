@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AOP System Interface</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>AOP System Monitoring</h1>
+    <div class="data">
+      <div class="parameter">
+        <label>Water Flow Rate:</label>
+        <span id="flowRate">0 L/s</span>
+      </div>
+      <div class="parameter">
+        <label>Pollutant Concentration:</label>
+        <span id="pollutantConcentration">0 ppm</span>
+      </div>
+      <div class="parameter">
+        <label>Treatment Efficiency:</label>
+        <span id="efficiency">0 %</span>
+      </div>
+    </div>
+    <div class="buttons">
+      <button id="startBtn">Start Monitoring</button>
+      <button id="stopBtn">Stop Monitoring</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
